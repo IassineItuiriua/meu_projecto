@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% block title %}Recenseamento{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-9">
+    <div class="card shadow-sm p-4">
+      <h3 class="mb-3 text-center">Recenseamento / Actualização de Dados</h3>
+
+      {% if messages %}
+        {% for message in messages %}
+          <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+          </div>
+        {% endfor %}
+      {% endif %}
+
+      <form method="post" enctype="multipart/form-data" novalidate>
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Nome Completo</label>
+            {{ form.nome_completo }}
+            {{ form.nome_completo.errors }}
+          </div>
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Data de Nascimento</label>
+            {{ form.data_nascimento }}
+            {{ form.data_nascimento.errors }}
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Filiação (Pai)</label>
+            {{ form.filiacao_pai }}
+            {{ form.filiacao_pai.errors }}
+          </div>
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Filiação (Mãe)</label>
+            {{ form.filiacao_mae }}
+            {{ form.filiacao_mae.errors }}
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Nacionalidade</label>
+          {{ form.nacionalidade }}
+          {{ form.nacionalidade.errors }}
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Naturalidade</label>
+          {{ form.naturalidade }}
+          {{ form.naturalidade.errors }}
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Morada</label>
+          {{ form.morada }}
+          {{ form.morada.errors }}
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Telefone</label>
+            {{ form.telefone }}
+            {{ form.telefone.errors }}
+          </div>
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Email</label>
+            {{ form.email }}
+            {{ form.email.errors }}
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Contacto Familiar</label>
+          {{ form.contacto_familiar }}
+          {{ form.contacto_familiar.errors }}
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Documento de Identidade (PDF/JPG/PNG ≤ 2MB)</label>
+          {{ form.documento_identidade }}
+          {{ form.documento_identidade.errors }}
+          {% if recenseamento.documento_identidade %}
+            <div class="mt-2">
+              <a href="{{ recenseamento.documento_identidade.url }}" target="_blank" class="btn btn-sm btn-outline-secondary">
+                Ver documento enviado
+              </a>
+            </div>
+          {% endif %}
+        </div>
+
+        <div class="text-end">
+          <button type="submit" class="btn btn-success">Guardar / Atualizar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

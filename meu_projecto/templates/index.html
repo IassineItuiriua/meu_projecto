@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Página Inicial{% endblock %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card shadow p-4 text-center">
+            <h3 class="mb-3">Sistema de Recenseamento Militar</h3>
+            <p class="lead">Bem-vindo ao sistema online para recenseamento e emissão de documentos militares.</p>
+
+            {% if not user.is_authenticated %}
+            <a href="/usuarios/login/" class="btn btn-primary btn-lg mt-3">Entrar</a>
+            {% else %}
+            <a href="/usuarios/painel/" class="btn btn-success btn-lg mt-3">Ir para o Painel</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

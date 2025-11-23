@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Gerar Documento{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-8">
+    <div class="card shadow-sm p-4">
+      <h3 class="mb-3 text-center">{{ documento.get_tipo_display }}</h3>
+
+      <p><strong>Usuário:</strong> {{ documento.usuario.first_name }} {{ documento.usuario.last_name }}</p>
+      <p><strong>Destino:</strong> {{ documento.destino }}</p>
+      <p><strong>Finalidade:</strong> {{ documento.finalidade }}</p>
+
+      <div class="text-center mt-4">
+        <a href="{% url 'baixar_pdf_documento' documento.id %}" class="btn btn-primary">
+          Baixar PDF
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

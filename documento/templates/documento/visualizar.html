@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Visualizar Documento{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="mb-4">Visualizar Documento</h2>
+
+    <div class="card p-4 shadow-sm">
+        <p><strong>Tipo de Documento:</strong> {{ documento.get_tipo_display }}</p>
+        <p><strong>Destino:</strong> {{ documento.destino }}</p>
+        <p><strong>Finalidade:</strong> {{ documento.finalidade }}</p>
+        <p><strong>Data da Solicitação:</strong> {{ documento.criado_em|date:"d/m/Y H:i" }}</p>
+        <p><strong>Número Sequencial:</strong> {{ documentAo.numero_sequencial }}</p>
+
+        <a href="{% url 'gerar_documento' documento.id %}" class="btn btn-primary mt-3">
+            Gerar Documento
+        </a>
+
+        <a href="{% url 'solicitar_documento' %}" class="btn btn-secondary mt-3">
+            Solicitar outro documento
+        </a>
+    </div>
+</div>
+{% endblock %}

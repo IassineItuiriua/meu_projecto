@@ -1,0 +1,152 @@
+body {
+    background-color: #f7f9fb;
+}
+
+/* header {
+    background: #0d3b66;
+    color: white;
+    padding: 15px 0;
+    
+} */
+
+footer {
+    background: #0d3b66;
+    color: white;
+    padding: 10px;
+    margin-top: 40px;
+}
+
+/* .card {
+    border-radius: 10px;
+} */
+
+/* Card do login */
+.card {
+    background-color: #ffffff;
+    border-radius: 1rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Título */
+.card h3 {
+    color: #333333;
+    font-weight: 600;
+}
+
+/* Labels e inputs */
+.form-label {
+    font-weight: 500;
+    color: #555555;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    margin-top: 0.2rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: #4e54c8;
+    box-shadow: 0 0 5px rgba(78, 84, 200, 0.5);
+}
+
+/* Botão */
+.btn-primary {
+    background-color: #4e54c8;
+    border: none;
+    padding: 0.6rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: #3b40a0;
+    transform: translateY(-2px);
+}
+
+/* Alertas */
+.alert-danger {
+    background-color: #f8d7da;
+    color: #842029;
+    border-radius: 0.5rem;
+    padding: 0.6rem 1rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;                    /* ocupa toda a largura do container */
+    padding: 0.6rem 0.8rem;         /* espaço interno confortável */
+    margin-top: 0.2rem;             /* pequeno espaçamento acima */
+    margin-bottom: 0.5rem;          /* espaçamento abaixo do campo */
+    border: 1px solid #ccc;         /* borda cinza clara */
+    border-radius: 0.5rem;          /* cantos arredondados */
+    transition: border 0.3s ease, box-shadow 0.3s ease; /* transições suaves */
+}
+
+input[type="email"]:focus {
+    outline: none;                             /* remove contorno padrão */
+    border-color: #4e54c8;                     /* borda azul/violeta ao focar */
+    box-shadow: 0 0 5px rgba(78, 84, 200, 0.5); /* sombra suave ao redor */
+}
+
+
+/* Responsivo */
+@media (max-width: 576px) {
+    .col-md-5 {
+        width: 90%;
+    }
+
+    .card {
+        padding: 1.5rem;
+    }
+}
+
+
+/* --- HEADER FIXO --- */
+.header-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+    background: #0d3b66;
+    color: white;
+    padding: 15px 0;
+}
+
+/* --- NAVBAR FIXA --- */
+.navbar {
+    position: fixed !important;
+     /* espaço para o header */
+    left: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+img{
+    width: 50px;
+    height: 50px;
+}
+/* --- EMPURRAR O CONTEÚDO PARA BAIXO --- */
+body {
+    padding-top: 200px; /* Ajuste conforme a altura do header + navbar */
+}
