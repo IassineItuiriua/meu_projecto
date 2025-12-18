@@ -18,7 +18,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Documento',
             fields=[
-                
+                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('tipo', models.CharField(choices=[('declaracao_militar', 'Declaração Militar'), ('cedula_militar', 'Cédula Militar'), ('recibo_recenseamento', 'Recibo de Recenseamento Militar')], max_length=50)),
                 ('destino', models.CharField(blank=True, max_length=200, null=True)),
                 ('finalidade', models.CharField(blank=True, max_length=200, null=True)),
