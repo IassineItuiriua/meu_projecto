@@ -10,17 +10,17 @@
 
             <p><strong>NIM:</strong>
                 {% if recenseamento %}
-                    {{ recenseamento.nim }}
+                {{ recenseamento.nim }}
                 {% else %}
-                    Não atribuído
+                Não atribuído
                 {% endif %}
             </p>
 
             <p><strong>Estado do Recenseamento:</strong>
                 {% if recenseamento %}
-                    <span class="badge bg-success">Regularizado</span>
+                <span class="badge bg-success">Regularizado</span>
                 {% else %}
-                    <span class="badge bg-danger">Pendente</span>
+                <span class="badge bg-danger">Pendente</span>
                 {% endif %}
             </p>
 
@@ -28,12 +28,16 @@
 
             <h4>Ação Disponível</h4>
 
-            {% if recenseamento %}
-                <a href="{% url 'solicitar_documento' %}" class="btn btn-primary">Solicitar Documento</a>
+            {% if recenseamento or perfil %}
+            <a href="{% url 'documento:solicitar_documento' %}" class="btn btn-primary">Solicitar Documento</a>
             {% else %}
-                <a href="{% url 'recensear' %}" class="btn btn-warning">Recensear</a>
+            <div class="alert alert-warning mt-3" role="alert"> ⚠️ Seu perfil ainda não está completo! <a
+                href="{% url 'usuarios:completar_perfil' %}" class="alert-link">Clique aqui para completar</a>. Para
+                maiores de 35 anos.
+            </div>
+            <a href="{% url 'recenseamento:recensear' %}" class="btn btn-warning">Recensear</a>
             {% endif %}
-
+            
         </div>
     </div>
 </div>

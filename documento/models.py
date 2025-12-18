@@ -1,9 +1,10 @@
 from django.db import models
+from django.core.exceptions import ValidationError
 from django.contrib.auth import get_user_model
 
 User = get_user_model()
 
-class Documento(models.Model):
+class Documento(models.Model):   
     TIPO_DOCUMENTO = [
         ('declaracao_militar', 'Declaração Militar'),
         ('cedula_militar', 'Cédula Militar'),

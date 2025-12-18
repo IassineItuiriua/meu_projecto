@@ -1,5 +1,7 @@
+
 body {
     background-color: #f7f9fb;
+    padding-top: 200px;
 }
 
 /* header {
@@ -147,6 +149,7 @@ img{
     height: 50px;
 }
 /* --- EMPURRAR O CONTEÚDO PARA BAIXO --- */
-body {
-    padding-top: 200px; /* Ajuste conforme a altura do header + navbar */
+.container {
+    flex: 1;
+    padding-top: 20px; /* espaço para header + navbar */
 }

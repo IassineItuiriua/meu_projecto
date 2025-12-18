@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Confirmação de Exame{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h3 class="mb-3">Confirmação Necessária</h3>
+    <p>Confirmas que foste submetido ao exame médico obrigatório?</p>
+
+    <form method="POST">
+        {% csrf_token %}
+        <button name="resposta" value="sim" class="btn btn-success me-2">Sim</button>
+        <button name="resposta" value="nao" class="btn btn-danger">Não</button>
+    </form>
+</div>
+{% endblock %}
